@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7B98A2CA-035F-114C-D87B-35399414C3DC" name="System Operacyjny">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[System Operacyjny jest identyfikowalny przez czterocyfrowy numer ID oraz Nazwę będącą ciągiem znaków. Produkt może posiadać opis tłumaczący np. jego cechy szczególne, dostępność.
+
+System Operacyjny wchodzi w skład Platformy. ]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>0C99EDFC-208E-CF82-A124-ED6B7E4F3294</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Systemy Operacyjne</preferredAbbreviation>
+<shortName>syst</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Systemu " id="9E6B14A1-5353-F22B-B2EC-7F60E8B9E9A0">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unikalny Identyfikator systemu operacyjnego np. "1200"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>62C86CDF-1D38-5E52-E22D-2579FECB99C6</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwa" id="22D53BEB-AAC7-209E-1BD7-24D013946069">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unikalna Nazwa Systemu Operacyjnego np. "Android OS 14.3"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>FDDB6B90-5A00-48F5-0B9D-E6E772206112</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 BYTE</dataTypeSize>
+<ownDataTypeParameters>64 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Opis" id="3269E9A7-3562-B154-8EE7-4D14CFAD06CF">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Opis systemu operacyjnego np zawierający cechy systemu np. "NIE POSIADA WSPARCIA DLA INTERFEJSU DOTYKOWEGO"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>6DA717B8-CF07-DA78-F440-86A39E6E482B</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1EDD8B03-AB45-419D-0320-FA00F1423927" name="Syst_PK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>C23DC8FA-7677-A6C3-2D8B-97C030FCD162</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9E6B14A1-5353-F22B-B2EC-7F60E8B9E9A0</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="DD991762-D794-E8E3-4B65-AA53B6B3F8CE" name="Syst_Nazwa_UK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>CE57D236-1A53-0C97-E4FC-1037304F6221</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>22D53BEB-AAC7-209E-1BD7-24D013946069</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

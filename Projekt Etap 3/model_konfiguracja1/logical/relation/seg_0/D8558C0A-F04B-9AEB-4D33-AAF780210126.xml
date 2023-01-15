@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Certyfikacja Wersji Produktu" directorySegmentName="seg_0" id="D8558C0A-F04B-9AEB-4D33-AAF780210126">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>7AD99763-08CA-D19D-2634-3835E41AA42B</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<targetTransferable>false</targetTransferable>
+<sourcePk>F159A641-221C-4094-6A43-4A4BA309030D</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>98AAA7DF-35D2-F633-C96B-61EEB8705ABB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>170558C5-8C8F-991C-F4A9-19F3CF7480E9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

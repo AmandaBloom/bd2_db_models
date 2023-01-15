@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Platformy Systemow Operacyjnych" directorySegmentName="seg_0" id="7ACD11F3-5509-BA43-CDFC-D7CB6BD255F4">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>C5C66424-179E-2963-DBDA-9970B66286FB</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<targetTransferable>false</targetTransferable>
+<sourcePk>1EDD8B03-AB45-419D-0320-FA00F1423927</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7B98A2CA-035F-114C-D87B-35399414C3DC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C2569F79-ADB6-0A33-AE94-634E4DD9B137</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="583E931C-9800-BF3B-5C2F-A65348180687" name="Produkty">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Produkt jest identyfikowany przez czterocyfrowy numer ID oraz Nazwę będącą ciągiem znaków. Produkt może posiadać opis tłumaczący np. jego zastosowanie, dostępność oraz cechy.
+
+Produkt wchodzi w skład wersji produktu. ]]></commentInRDBMS>
+<generatorID>766FC50D-38AF-B255-964D-B194A1F5E392</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<abbreviation>prod</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Produktu" id="B007EAD0-501F-E7D2-D6A0-6EE863E1180A">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unikalny calkowitoliczbowy identyfikator produktu np. 1010]]></commentInRDBMS>
+<generatorID>15AEC400-08A7-AD06-E0AF-F8BD7AF71F93</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nazwa" id="E48E18BB-724B-C727-845A-98F2C74CC13A">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nazwa Produktu np. "CAR ECONOMY CALCULATOR PRO"]]></commentInRDBMS>
+<generatorID>D4EF841B-CE50-0936-2C1E-6E91C600E47A</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 BYTE</dataTypeSize>
+<ownDataTypeParameters>64 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Opis" id="5E562A42-CDCD-8A29-4DEA-221B9D597475">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Opis produktu np. "APLIKACJA DLA FIRMY ABC SP. Z.O.O" lub "APLIKACJA DO LICZENIA SPALANIA SAMOCHODU"]]></commentInRDBMS>
+<generatorID>B57F7DE6-25AB-001E-85F4-10AB28428DDE</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="089C3307-98E3-C124-BE3E-A5EE71CA1152" name="Produkty_PK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<generatorID>1069CA37-50D3-234A-0D61-D4DCDA4CD435</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B007EAD0-501F-E7D2-D6A0-6EE863E1180A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05895B35-36DC-E6F0-45CD-9643CBEB3525" name="Produkty_Nazwa_UN">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<generatorID>DEA29617-2113-1E94-8470-9F425661CE85</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E48E18BB-724B-C727-845A-98F2C74CC13A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

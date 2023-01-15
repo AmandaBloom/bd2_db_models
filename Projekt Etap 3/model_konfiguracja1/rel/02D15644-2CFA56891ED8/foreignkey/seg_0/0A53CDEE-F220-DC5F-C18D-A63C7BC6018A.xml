@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0A53CDEE-F220-DC5F-C18D-A63C7BC6018A" containerWithKeyObject="1D4465F9-1BF5-4FC1-A3A2-32349BA057D5" localFKIndex="C3C6782C-A8BD-A078-5077-F423EF36191F" name="Certyfikacje_Wersje_Produktu_FK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<generatorID>D8558C0A-F04B-9AEB-4D33-AAF780210126</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<referredTableLongName>Wersje Produktu</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>65D38B24-F0B8-A2D9-24DF-F836A6CD6AFE</referredTableID>
+<keyObject>FBD21EB9-3825-1B60-7D2D-09CDE4C3DE8D</keyObject>
+<referredKeyID>FBD21EB9-3825-1B60-7D2D-09CDE4C3DE8D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Produktu,Numer_Wersji</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

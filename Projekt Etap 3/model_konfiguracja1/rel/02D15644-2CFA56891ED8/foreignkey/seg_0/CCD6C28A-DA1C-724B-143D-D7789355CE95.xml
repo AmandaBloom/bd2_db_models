@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CCD6C28A-DA1C-724B-143D-D7789355CE95" containerWithKeyObject="9516D1A2-AAA1-5C9F-DE22-CE00FB5BE278" localFKIndex="035F9F28-FE34-CA49-C536-F57F9BF33D98" name="Platformy_Systemy_Operacyjne_FK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 16:04:51 UTC</createdTime>
+<generatorID>7ACD11F3-5509-BA43-CDFC-D7CB6BD255F4</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<referredTableLongName>Systemy Operacyjne</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6CE60E3B-61BD-15FB-840D-9E73C8DA60A2</referredTableID>
+<keyObject>B6184FC5-EB7F-D3FF-F897-6262635DCAC2</keyObject>
+<referredKeyID>B6184FC5-EB7F-D3FF-F897-6262635DCAC2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Systemu</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="170558C5-8C8F-991C-F4A9-19F3CF7480E9" name="Certyfikacja">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Certyfikację wystawia się na daną Wersję Produktu na poszczególnych Platformach określanych przez System Operacyjny oraz jego Numer Wersji. Dla każdej Platformy każda Wersja Produktu posiada Wartość Certyfikacji - Certyfikowana "C", W Czasie Testów "T" lub Niecetyfikowana "N", zapisana jako jeden znak, posiada Datę Uzyskania tej Certyfikacji oraz moze posiadac Date Wygasniecia tej Certyfikacji]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>9BCB8F92-1CFC-331C-34FB-FEAB0BA3C915</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Certyfikacje</preferredAbbreviation>
+<shortName>cert</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Systemu " id="B455E4F5-D87D-E410-46FA-71D74B3B9EDA">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<generatorID>C128952A-521B-C040-66F9-6ED0B200FF82</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>5F909D8E-971C-2515-D14D-6A5B0D98BD22</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<referedAttribute>14E2B1C8-3234-D473-A2A4-65F4D93E9245</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Numer Wersji Platformy" id="0902A117-BDC5-B2CC-C375-19C01FBC4B3F">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<generatorID>C128952A-521B-C040-66F9-6ED0B200FF82</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>C444D53C-6599-36E3-9279-6960D19277BD</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<referedAttribute>FE45CFC5-AED1-807E-8D14-D9781E049902</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID Produktu" id="F242173F-AC61-A010-A721-3B1E3E156734">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<generatorID>D8558C0A-F04B-9AEB-4D33-AAF780210126</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>86644424-297C-67A6-41E4-66ED77543813</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<referedAttribute>9687E64B-DCEB-8F03-A5FE-4626DA1422C0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Numer Wersji Produktu" id="D83C76DF-294B-ABE5-DB0C-7A03219A4664">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<generatorID>D8558C0A-F04B-9AEB-4D33-AAF780210126</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>5E9468D2-3415-1040-4F78-9ED77CA8EF32</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<referedAttribute>1FDCC1D0-51A2-7BFB-1DC2-A9B6B569E582</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Wartosc" id="0993C322-BD1D-81E3-7CCD-9B859C50414A">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Wartosc certyfikacji wystawionej na platforme z produktem dana jako 1 znak np. "C" - certyfikowana, "T" - w czasie testow, "N" - niecertyfikowana]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>E676473E-DFFE-5E63-D391-EBF41EA24F84</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data Uzyskania" id="E8D173C3-72A3-BC80-CA8B-051F0143CEF1">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data uzyskania certyfikacji - pole obowiazkowe np. "31/03/2007"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>55EAF3E4-03CE-037F-49DB-C4F2DCDFF5CA</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data Wygasniecia" id="B1EF1B1E-1E77-CD58-5BA3-C4B1B97A413D">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data utracenia certyfikacji - pole nieobowiazkowe np. "31/03/2007"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>9BF95503-925A-D113-3414-CB7C3DF1149B</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E9DBB309-A070-4294-7B0D-E59C6A922CED" name="Certyfikacja PK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>E938099D-287D-EB73-5E09-8A99754FE00D</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B455E4F5-D87D-E410-46FA-71D74B3B9EDA</attributeRef>
+<attributeRef>0902A117-BDC5-B2CC-C375-19C01FBC4B3F</attributeRef>
+<attributeRef>F242173F-AC61-A010-A721-3B1E3E156734</attributeRef>
+<attributeRef>D83C76DF-294B-ABE5-DB0C-7A03219A4664</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

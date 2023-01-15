@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="98AAA7DF-35D2-F633-C96B-61EEB8705ABB" name="Wersja Produktu">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Wersja Produktu dotyczy Produktów ich wydań, kolejnych generacji. Wersja Produktu jest identfikowana przez ID Produktu oraz Numer Wersji. Wersja produktu może zawierać opis.
+
+Wersja Produktu wchodzi w skład Certyfikacji.]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>EE350E53-3BD4-E51E-1C91-830B7003D766</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Wersje Produktu</preferredAbbreviation>
+<shortName>wers prod</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Produktu" id="9687E64B-DCEB-8F03-A5FE-4626DA1422C0">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<generatorID>91C349DD-61F0-1832-6A5E-24363CD23568</generatorID>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>21C14CFC-3849-FADB-4CAD-43D387A83779</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<referedAttribute>15AEC400-08A7-AD06-E0AF-F8BD7AF71F93</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Numer Wersji" id="1FDCC1D0-51A2-7BFB-1DC2-A9B6B569E582">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Numer Wersji Produktu tj. odslony, zawarcie poprawek itp dany z dokladnoscia 2 miejsc po przecinku przechowywany jako napis np. "1020,02"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>6AEDCBDF-CCEB-61C5-9CE1-C1A9090918C3</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>7 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Opis" id="59E29471-687C-43D1-DC59-18909DE9026A">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Opis wersji produktu np. "ZAWIERA FUNKCJONALNOSC TLUMACZENIA INTERFEJSU NA JEZYKI BALKANSKIE"]]></commentInRDBMS>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>37A60206-4564-7786-CC4D-BDFF4EA8260A</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F159A641-221C-4094-6A43-4A4BA309030D" name="Wersja Produktu PK">
+<createdBy>Szef</createdBy>
+<createdTime>2023-01-15 15:31:29 UTC</createdTime>
+<ownerDesignName>model_konfiguracja1</ownerDesignName>
+<importedID>DF395F0D-D53B-F9D0-5242-921D2425C1CA</importedID>
+<engineerTo>
+<item key="02D15644-A46B-72A3-B70A-2CFA56891ED8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9687E64B-DCEB-8F03-A5FE-4626DA1422C0</attributeRef>
+<attributeRef>1FDCC1D0-51A2-7BFB-1DC2-A9B6B569E582</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
