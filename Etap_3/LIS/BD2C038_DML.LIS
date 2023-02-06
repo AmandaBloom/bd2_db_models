@@ -1,0 +1,201 @@
+SQL> 
+SQL> 
+SQL> -- DELETE kaskadowe
+SQL> INSERT INTO Systemy_Operacyjne VALUES (NULL, 'iOS Zebra', NULL);
+
+1 row inserted.
+
+SQL> INSERT INTO Platformy VALUES (1009, '77.77', NULL);
+
+1 row inserted.
+
+SQL> SELECT * FROM Platformy;
+
+ID_SYSTEMU NUMER_W OPIS                                                                                                                                                                                                    
+---------- ------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      1001 7.11                                                                                                                                                                                                            
+      1001 7.12                                                                                                                                                                                                            
+      1001 7.13    Wsparcie obiektów 3D                                                                                                                                                                                    
+      1002 8.00                                                                                                                                                                                                            
+      1002 8.01                                                                                                                                                                                                            
+      1002 8.02                                                                                                                                                                                                            
+      1003 10.15                                                                                                                                                                                                           
+      1003 10.17A  Brak wsparcia dla XYZ                                                                                                                                                                                   
+      1004 11.00   Beta Testy OS                                                                                                                                                                                           
+      1005 04                                                                                                                                                                                                              
+      1005 05                                                                                                                                                                                                              
+      1005 06                                                                                                                                                                                                              
+      1006 01                                                                                                                                                                                                              
+      1007 12                                                                                                                                                                                                              
+      1008 17.00                                                                                                                                                                                                           
+      1008 17.01                                                                                                                                                                                                           
+      1009 77.77                                                                                                                                                                                                           
+
+17 rows selected. 
+
+SQL> DELETE FROM Systemy_Operacyjne
+  2      WHERE ID_SYSTEMU = 1009;
+
+1 row deleted.
+
+SQL> SELECT * FROM Platformy;
+
+ID_SYSTEMU NUMER_W OPIS                                                                                                                                                                                                    
+---------- ------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      1001 7.11                                                                                                                                                                                                            
+      1001 7.12                                                                                                                                                                                                            
+      1001 7.13    Wsparcie obiektów 3D                                                                                                                                                                                    
+      1002 8.00                                                                                                                                                                                                            
+      1002 8.01                                                                                                                                                                                                            
+      1002 8.02                                                                                                                                                                                                            
+      1003 10.15                                                                                                                                                                                                           
+      1003 10.17A  Brak wsparcia dla XYZ                                                                                                                                                                                   
+      1004 11.00   Beta Testy OS                                                                                                                                                                                           
+      1005 04                                                                                                                                                                                                              
+      1005 05                                                                                                                                                                                                              
+      1005 06                                                                                                                                                                                                              
+      1006 01                                                                                                                                                                                                              
+      1007 12                                                                                                                                                                                                              
+      1008 17.00                                                                                                                                                                                                           
+      1008 17.01                                                                                                                                                                                                           
+
+16 rows selected. 
+
+SQL> 
+SQL> -- DELETE kaskadowe error
+SQL> SELECT * FROM Wersje_Produktu;
+
+ID_PRODUKTU NUMER_W OPIS                                                                                                                                                                                                    
+----------- ------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       1001 1000,01                                                                                                                                                                                                         
+       1002 2000,01                                                                                                                                                                                                         
+       1002 2000,02                                                                                                                                                                                                         
+       1002 2001,01                                                                                                                                                                                                         
+       1003 3000,01                                                                                                                                                                                                         
+       1003 3000,02 Wersja z banerem reklamy                                                                                                                                                                                
+       1004 4120,00                                                                                                                                                                                                         
+       1005 2442,00                                                                                                                                                                                                         
+       1005 2442,01                                                                                                                                                                                                         
+
+9 rows selected. 
+
+SQL> DELETE FROM Produkty
+  2      WHERE ID_PRODUKTU = 1001;
+
+Error starting at line : 17 in command -
+DELETE FROM Produkty
+    WHERE ID_PRODUKTU = 1001
+Error report -
+ORA-02292: naruszono więzy spójności (BD2C038.CERT_WERSJE_PRODUKTU_FK) - znaleziono rekord podrzędny
+
+SQL> SELECT * FROM Wersje_Produktu;
+
+ID_PRODUKTU NUMER_W OPIS                                                                                                                                                                                                    
+----------- ------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       1001 1000,01                                                                                                                                                                                                         
+       1002 2000,01                                                                                                                                                                                                         
+       1002 2000,02                                                                                                                                                                                                         
+       1002 2001,01                                                                                                                                                                                                         
+       1003 3000,01                                                                                                                                                                                                         
+       1003 3000,02 Wersja z banerem reklamy                                                                                                                                                                                
+       1004 4120,00                                                                                                                                                                                                         
+       1005 2442,00                                                                                                                                                                                                         
+       1005 2442,01                                                                                                                                                                                                         
+
+9 rows selected. 
+
+SQL> 
+SQL> -- UPDATE na nietransferowalnych więzach 
+SQL> UPDATE Wersje_Produktu
+  2    SET ID_PRODUKTU = ID_PROD_SEQ.NEXTVAL
+  3    WHERE NUMER_WERSJI = '2001,01';
+
+Error starting at line : 22 in command -
+UPDATE Wersje_Produktu
+  SET ID_PRODUKTU = ID_PROD_SEQ.NEXTVAL
+  WHERE NUMER_WERSJI = '2001,01'
+Error report -
+ORA-20225: Non Transferable FK constraint on table Wersje_Produktu is violated
+ORA-06512: przy "BD2C038.FKNTM_WERSJE_PRODUKTU", linia 2
+ORA-04088: błąd w trakcie wykonywania wyzwalacza 'BD2C038.FKNTM_WERSJE_PRODUKTU'
+
+SQL> 
+SQL> UPDATE Certyfikacje
+  2    SET ID_SYSTEMU = ID_SYS_SEQ.NEXTVAL
+  3    WHERE NUMER_WERSJI_PLATFORMY = '17.00';
+
+Error starting at line : 26 in command -
+UPDATE Certyfikacje
+  SET ID_SYSTEMU = ID_SYS_SEQ.NEXTVAL
+  WHERE NUMER_WERSJI_PLATFORMY = '17.00'
+Error report -
+ORA-20225: Non Transferable FK constraint on table Certyfikacje is violated
+ORA-06512: przy "BD2C038.FKNTM_CERTYFIKACJE", linia 2
+ORA-04088: błąd w trakcie wykonywania wyzwalacza 'BD2C038.FKNTM_CERTYFIKACJE'
+
+SQL> 
+SQL> -- INSERT naruszenie więzów spójności
+SQL> INSERT INTO Certyfikacje VALUES (1002, '7.11', 1001, '1000,01', 'N', TO_DATE('11/12/2022','dd/mm/yyyy'), NULL);
+
+Error starting at line : 31 in command -
+INSERT INTO Certyfikacje VALUES (1002, '7.11', 1001, '1000,01', 'N', TO_DATE('11/12/2022','dd/mm/yyyy'), NULL)
+Error report -
+ORA-02291: naruszono więzy spójności (BD2C038.CERT_PLATFORMY_FK) - nie znaleziono klucza nadrzędnego
+
+SQL> 
+SQL> -- INSERT naruszenie unikalności
+SQL> INSERT INTO Systemy_Operacyjne VALUES (NULL, 'Android 8.0', 'Oreo');
+
+Error starting at line : 34 in command -
+INSERT INTO Systemy_Operacyjne VALUES (NULL, 'Android 8.0', 'Oreo')
+Error report -
+ORA-00001: naruszono więzy unikatowe (BD2C038.SYSOP_UN)
+
+SQL> 
+SQL> -- UPDATE naruszenie spójności CHECK numeru wersji produktu
+SQL> UPDATE Wersje_Produktu
+  2    SET NUMER_WERSJI = '148,859'
+  3    WHERE NUMER_WERSJI = '1000,01';
+
+Error starting at line : 37 in command -
+UPDATE Wersje_Produktu
+  SET NUMER_WERSJI = '148,859'
+  WHERE NUMER_WERSJI = '1000,01'
+Error report -
+ORA-02290: naruszono więzy CHECK (BD2C038.ZNAKPRZECINKA)
+
+SQL> 
+SQL> UPDATE Wersje_Produktu
+  2    SET NUMER_WERSJI = '1488.59'
+  3    WHERE NUMER_WERSJI = '1000,01';
+
+Error starting at line : 41 in command -
+UPDATE Wersje_Produktu
+  SET NUMER_WERSJI = '1488.59'
+  WHERE NUMER_WERSJI = '1000,01'
+Error report -
+ORA-02290: naruszono więzy CHECK (BD2C038.ZNAKPRZECINKA)
+
+SQL> 
+SQL> UPDATE Wersje_Produktu
+  2    SET NUMER_WERSJI = '1488259'
+  3    WHERE NUMER_WERSJI = '1000,01';
+
+Error starting at line : 45 in command -
+UPDATE Wersje_Produktu
+  SET NUMER_WERSJI = '1488259'
+  WHERE NUMER_WERSJI = '1000,01'
+Error report -
+ORA-02290: naruszono więzy CHECK (BD2C038.ZNAKPRZECINKA)
+
+SQL> 
+SQL> -- Próba dodania wartości certyfikatu z niepoprawna wartoscia
+SQL> INSERT INTO Certyfikacje VALUES (1008, '17.00', 1005, '2442,00', 'F', TO_DATE('08/12/2022','dd/mm/yyyy'), TO_DATE('08/01/2023','dd/mm/yyyy'));
+
+Error starting at line : 50 in command -
+INSERT INTO Certyfikacje VALUES (1008, '17.00', 1005, '2442,00', 'F', TO_DATE('08/12/2022','dd/mm/yyyy'), TO_DATE('08/01/2023','dd/mm/yyyy'))
+Error report -
+ORA-02290: naruszono więzy CHECK (BD2C038.LISTAWARTOSCI)
+
+SQL> 
+SQL> spool off

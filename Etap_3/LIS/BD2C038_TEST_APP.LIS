@@ -1,0 +1,36 @@
+SQL> 
+SQL> select USER from dual;
+
+USER                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+BD2C038_APP
+
+SQL> 
+SQL> -- Wartości certyfikacji dla Systemu Operacyjnego Windows 7 wersja 7.11
+SQL> select Systemy_Operacyjne.Nazwa as "Nazwa OS", Platformy.Numer_Wersji as "Numer Wersji OS", Produkty.Nazwa as "Nazwa Produktu", Wersje_Produktu.Numer_Wersji as "Numer Wersji Produktu", Certyfikacje.Wartosc as "Wartosc Cert", Certyfikacje.Data_Uzyskania as "Data uzyskania", Certyfikacje.Data_Wygasniecia as "Data wygasniecia"
+  2  from Certyfikacje
+  3  join Platformy on Platformy.ID_Systemu = Certyfikacje.ID_Systemu
+  4  join Wersje_Produktu on Wersje_Produktu.ID_Produktu = Certyfikacje.ID_Produktu
+  5  join Produkty on Produkty.ID_Produktu = Wersje_Produktu.ID_Produktu
+  6  join Systemy_Operacyjne on Systemy_Operacyjne.ID_Systemu = Platformy.ID_Systemu 
+  7  WHERE Platformy.Numer_Wersji = '7.11';
+
+Nazwa OS                                                         Numer W Nazwa Produktu                                                   Numer W W Data uzy Data wyg
+---------------------------------------------------------------- ------- ---------------------------------------------------------------- ------- - -------- --------
+Windows 7                                                        7.11    Car Consumption Calculator                                       1000,01 N 22/12/11         
+
+SQL> 
+SQL> -- Wszystkie wersje Systemu Operacyjnego Windows 7 
+SQL> select Systemy_Operacyjne.Nazwa as "Nazwa OS", Platformy.Numer_Wersji as "Numer Wersji"
+  2  from Systemy_Operacyjne
+  3  join Platformy on Systemy_Operacyjne.id_systemu = Platformy.id_systemu
+  4  where Systemy_Operacyjne.Nazwa = 'Windows 7';
+
+Nazwa OS                                                         Numer W
+---------------------------------------------------------------- -------
+Windows 7                                                        7.11   
+Windows 7                                                        7.12   
+Windows 7                                                        7.13   
+
+SQL> 
+SQL> spool off
